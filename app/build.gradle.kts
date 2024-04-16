@@ -24,17 +24,17 @@ plugins {
 }
 
 android {
-    namespace = "android.template"
+    namespace = "xyz.artenes.app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "android.template"
+        applicationId = "xyz.artenes.app"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "android.template.HiltTestRunner"
+        testInstrumentationRunner = "xyz.artenes.app.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -64,7 +64,7 @@ android {
     buildFeatures {
         compose = true
         aidl = false
-        buildConfig = false
+        buildConfig = true
         renderScript = false
         shaders = false
     }
@@ -90,6 +90,12 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+
+    // Timber
+    implementation(libs.timber)
+
+    // Icons
+    implementation(libs.icons.extended)
 
     // Hilt Dependency Injection
     implementation(libs.hilt.android)
