@@ -53,6 +53,7 @@ android {
     }
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -85,6 +86,9 @@ dependencies {
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
+
+    // Desugar support for new java APIs for old Android versions
+    coreLibraryDesugaring(libs.android.tools.desugar)
 
     // Core Android dependencies
     implementation(libs.androidx.core.ktx)

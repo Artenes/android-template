@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package xyz.artenes.app.ui
+package xyz.artenes.template.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,7 +24,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
-import xyz.artenes.app.ui.theme.MyApplicationTheme
+import xyz.artenes.template.app.MainNavigation
+import xyz.artenes.template.app.theme.MyApplicationTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {

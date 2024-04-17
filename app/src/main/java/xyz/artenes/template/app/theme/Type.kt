@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package xyz.artenes.app.ui.theme
+package xyz.artenes.template.app.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

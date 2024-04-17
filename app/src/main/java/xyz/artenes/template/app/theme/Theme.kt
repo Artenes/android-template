@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package xyz.artenes.app.ui.theme
+package xyz.artenes.template.app.theme
 
 import android.app.Activity
 import android.os.Build

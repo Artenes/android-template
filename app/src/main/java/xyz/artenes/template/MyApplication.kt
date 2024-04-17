@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package xyz.artenes.app
+package xyz.artenes.template
 
 import android.app.Application
-import xyz.artenes.app.logging.ProductionTree
+import xyz.artenes.template.utils.ProductionTree
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
+import xyz.artenes.app.BuildConfig
 
 @HiltAndroidApp
 class MyApplication : Application() {
