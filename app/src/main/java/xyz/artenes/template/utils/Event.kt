@@ -4,9 +4,9 @@ class Event(private val name: String? = null) {
 
     private var consumed: Boolean = false
 
-    fun consume(consumer: () -> Unit) {
+    fun consume(consumer: (String) -> Unit) {
         if (!consumed && name != null) {
-            consumer()
+            consumer(name)
             consumed = true
         }
     }
