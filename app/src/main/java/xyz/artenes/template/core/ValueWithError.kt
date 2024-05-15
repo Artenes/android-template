@@ -1,4 +1,4 @@
-package xyz.artenes.template.utils
+package xyz.artenes.template.core
 
 /**
  * This is useful for when you want to expose a value from your ViewModel

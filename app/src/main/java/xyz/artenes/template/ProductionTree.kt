@@ -1,4 +1,4 @@
-package xyz.artenes.template.utils
+package xyz.artenes.template
 
 import android.util.Log
 import timber.log.Timber

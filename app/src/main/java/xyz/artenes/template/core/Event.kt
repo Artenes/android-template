@@ -1,4 +1,4 @@
-package xyz.artenes.template.utils
+package xyz.artenes.template.core
 
 /**
  * This one is useful to send events from the ViewModel to the View
