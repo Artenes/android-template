@@ -1,0 +1,26 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+buildscript {
+    ext.kotlin_version = '1.9.23'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    // Add any dependencies you need for this module
+}
+
+kotlin {
+    jvmToolchain(17)
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}

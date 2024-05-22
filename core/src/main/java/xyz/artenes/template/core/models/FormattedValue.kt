@@ -1,4 +1,4 @@
-package xyz.artenes.template.core
+package xyz.artenes.template.core.models
 
 /**
  * This is useful for when you need to pass down to the view

@@ -30,4 +30,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Template"
 
-include(":app")
+include(":app", ":core")
