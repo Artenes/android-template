@@ -18,12 +18,14 @@ package xyz.artenes.template.app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
+import xyz.artenes.app.BuildConfig
 import xyz.artenes.template.app.MainNavigation
 import xyz.artenes.template.app.theme.MyApplicationTheme
 
@@ -42,5 +44,16 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        if (BuildConfig.FLAVOR != "production") {
+            onBackPressedDispatcher.addCallback(backPressHandler)
+        }
     }
+
+    private val backPressHandler = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            finishAffinity()
+        }
+    }
+
 }

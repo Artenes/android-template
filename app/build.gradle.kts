@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
 import java.util.Properties
 
 val secrets = Properties().apply {
@@ -33,7 +34,7 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
+        archivesName = "template_v${versionName}"
         testInstrumentationRunner = "xyz.artenes.app.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -45,13 +46,27 @@ android {
         }
     }
 
+    flavorDimensions.add("app")
+    productFlavors {
+
+        create("production") {
+            dimension = "app"
+        }
+
+        create("development") {
+            dimension = "app"
+        }
+
+    }
+
+
     buildTypes {
         getByName("debug") {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
         }
         getByName("release") {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             signingConfig = signingConfigs.getByName("release")
             applicationIdSuffix = ".release"
