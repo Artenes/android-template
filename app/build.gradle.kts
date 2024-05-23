@@ -29,7 +29,7 @@ android {
 
     defaultConfig {
         applicationId = "xyz.artenes.app"
-        minSdk = 21
+        minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -91,6 +91,7 @@ android {
 dependencies {
 
     implementation(project(":core"))
+    implementation(project(":android"))
 
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)

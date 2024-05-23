@@ -13,7 +13,7 @@ buildscript {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    // Add any dependencies you need for this module
+    implementation(libs.kotlinx.coroutines.core)
 }
 
 kotlin {
