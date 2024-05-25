@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import xyz.artenes.template.app.components.DatePickerInput
 import xyz.artenes.template.app.components.DropDownMenuInput
 import xyz.artenes.template.app.components.MonthPicker
+import xyz.artenes.template.app.components.MultiDropDownMenuInput
 import xyz.artenes.template.core.models.FormattedValue
 import xyz.artenes.template.core.models.SelectableItem
 import java.time.LocalDate
@@ -41,7 +42,17 @@ fun SamplesScreen() {
     }
 
     var options by remember {
-        mutableStateOf(listOf(SelectableItem(20, "Value 20"), SelectableItem(40, "Value 40")))
+        mutableStateOf(listOf(SelectableItem("Value A"), SelectableItem("Value B")))
+    }
+
+    var multiOptions by remember {
+        mutableStateOf(
+            listOf(
+                SelectableItem("Value A"),
+                SelectableItem("Value B"),
+                SelectableItem("Value C")
+            )
+        )
     }
 
     var date by remember {
@@ -121,6 +132,21 @@ fun SamplesScreen() {
                 options = options,
                 onOptionSelected = { value ->
                     options = options.map { it.copy(selected = it == value) }
+                }
+            )
+
+            MultiDropDownMenuInput(
+                modifier = Modifier.padding(top = 20.dp),
+                label = "Multi Drop down input",
+                options = multiOptions,
+                onOptionSelected = { value ->
+                    multiOptions = multiOptions.map {
+                        if (it == value) {
+                            it.copy(selected = !value.selected)
+                        } else {
+                            it
+                        }
+                    }
                 }
             )
 
