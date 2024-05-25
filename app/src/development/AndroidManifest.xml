@@ -6,10 +6,10 @@
         <activity
             android:name="xyz.artenes.budget.app.DevelopmentActivity"
             android:exported="true"
-            android:label="Dev tools"
+            android:label="Template Dev tools"
             android:theme="@style/Theme.MyApplication"
             android:icon="@mipmap/ic_launcher">
-            <intent-filter android:priority="0">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>

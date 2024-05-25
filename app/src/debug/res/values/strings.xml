@@ -15,5 +15,5 @@
   -->
 
 <resources>
-    <string name="app_name">MyApplication (debug)</string>
+    <string name="app_name">Template app (debug)</string>
 </resources>
