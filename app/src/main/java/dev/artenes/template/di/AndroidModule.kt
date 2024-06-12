@@ -11,7 +11,7 @@ import dev.artenes.template.android.AndroidApplicationsRepository
 import dev.artenes.template.android.AndroidSettingsRepository
 import dev.artenes.template.android.AndroidValuesRepository
 import dev.artenes.template.android.dataStore
-import xyz.artenes.template.app.MainActivity
+import dev.artenes.template.app.MainActivity
 import dev.artenes.template.core.interfaces.ApplicationsRepository
 import dev.artenes.template.core.interfaces.SettingsRepository
 import dev.artenes.template.core.interfaces.ValuesRepository

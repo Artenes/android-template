@@ -1,6 +1,6 @@
 package dev.artenes.template.di
 
-import xyz.artenes.template.app.features.SampleEditorViewModel
+import dev.artenes.template.app.features.SampleEditorViewModel
 import javax.inject.Inject
 import javax.inject.Singleton
 

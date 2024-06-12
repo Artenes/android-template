@@ -25,9 +25,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import dagger.hilt.android.AndroidEntryPoint
-import dev.artenes.app.BuildConfig
-import xyz.artenes.template.app.MainNavigation
-import xyz.artenes.template.app.theme.MyApplicationTheme
+import dev.artenes.template.BuildConfig
+import dev.artenes.template.app.theme.MyApplicationTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -47,7 +46,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        if (_root_ide_package_.dev.artenes.app.BuildConfig.FLAVOR != "production") {
+        if (BuildConfig.FLAVOR != "production") {
             onBackPressedDispatcher.addCallback(backPressHandler)
         }
     }

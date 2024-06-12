@@ -15,10 +15,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import xyz.artenes.template.app.components.DatePickerInput
-import xyz.artenes.template.app.components.DropDownMenuInput
-import xyz.artenes.template.app.components.MonthPicker
-import xyz.artenes.template.app.components.MultiDropDownMenuInput
+import dev.artenes.template.app.components.DatePickerInput
+import dev.artenes.template.app.components.DropDownMenuInput
+import dev.artenes.template.app.components.MonthPicker
+import dev.artenes.template.app.components.MultiDropDownMenuInput
 import dev.artenes.template.core.models.foundation.FormattedValue
 import dev.artenes.template.core.models.foundation.SelectableItem
 import java.time.LocalDate

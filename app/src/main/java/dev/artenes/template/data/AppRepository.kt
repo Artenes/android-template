@@ -3,13 +3,14 @@ package dev.artenes.template.data
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import dev.artenes.template.core.interfaces.DataRepository
+import dev.artenes.template.data.dao.SampleDao
 import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.coroutines.CoroutineContext
 
 @Singleton
 class AppRepository @Inject constructor(
-    private val database: AppDatabase,
+    private val sampleDao: SampleDao,
     private val dispatcher: CoroutineContext = Dispatchers.IO
 ): DataRepository {
 

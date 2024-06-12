@@ -18,10 +18,9 @@ package dev.artenes.template
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
+import dev.artenes.template.di.FactoryLocator
+import dev.artenes.template.di.FactoryLocatorMapping
 import timber.log.Timber
-import dev.artenes.app.BuildConfig
-import xyz.artenes.template.di.FactoryLocator
-import xyz.artenes.template.di.FactoryLocatorMapping
 import javax.inject.Inject
 
 @HiltAndroidApp
@@ -33,7 +32,7 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         FactoryLocator.instance = mapping
-        val tree = if (_root_ide_package_.dev.artenes.app.BuildConfig.DEBUG) Timber.DebugTree() else ProductionTree()
+        val tree = if (BuildConfig.DEBUG) Timber.DebugTree() else ProductionTree()
         Timber.plant(tree)
     }
 
