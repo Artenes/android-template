@@ -1,4 +1,4 @@
-package xyz.artenes.template.core.models
+package xyz.artenes.template.core.models.foundation
 
 /**
  * This one is useful to map the action of

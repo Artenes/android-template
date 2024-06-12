@@ -19,7 +19,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.platform.LocalFocusManager
-import xyz.artenes.template.core.models.FormattedValue
+import xyz.artenes.template.core.models.foundation.FormattedValue
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalTime

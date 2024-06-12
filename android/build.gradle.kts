@@ -27,8 +27,8 @@ android {
 
 dependencies {
     api(project(":core"))
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.datastore)
+    api(libs.androidx.core.ktx)
+    api(libs.datastore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
 }

@@ -20,12 +20,19 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 import xyz.artenes.app.BuildConfig
+import xyz.artenes.template.di.FactoryLocator
+import xyz.artenes.template.di.FactoryLocatorMapping
+import javax.inject.Inject
 
 @HiltAndroidApp
 class MyApplication : Application() {
 
+    @Inject
+    lateinit var mapping: FactoryLocatorMapping
+
     override fun onCreate() {
         super.onCreate()
+        FactoryLocator.instance = mapping
         val tree = if (BuildConfig.DEBUG) Timber.DebugTree() else ProductionTree()
         Timber.plant(tree)
     }

@@ -30,8 +30,8 @@ import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
-import xyz.artenes.template.core.models.FormattedValue
-import xyz.artenes.template.core.models.SelectableItem
+import xyz.artenes.template.core.models.foundation.FormattedValue
+import xyz.artenes.template.core.models.foundation.SelectableItem
 import java.time.LocalDate
 import java.time.Month
 import java.time.format.TextStyle

@@ -1,4 +1,4 @@
-package xyz.artenes.template.core.models
+package xyz.artenes.template.core.models.foundation
 
 data class SelectableItem<T>(
     val value: T,

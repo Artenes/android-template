@@ -1,7 +1,9 @@
 package xyz.artenes.budget.app
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
@@ -18,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import kotlinx.coroutines.launch
+import xyz.artenes.template.core.models.foundation.Event
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -25,18 +28,21 @@ fun DevelopmentScreen(
     viewModel: DevelopmentViewModel = hiltViewModel()
 ) {
 
-    val showSnackBar by viewModel.showSnackBar.collectAsState()
+    val state by viewModel.state.collectAsState()
     val coroutineScope = rememberCoroutineScope()
     val snackBarHostState = remember {
         SnackbarHostState()
     }
 
-    LaunchedEffect(key1 = showSnackBar) {
-        showSnackBar.consume {
-            coroutineScope.launch {
-                snackBarHostState.showSnackbar(it)
+    LaunchedEffect(key1 = state.snackBar) {
+        if (state.snackBar is Event.SuccessfulEvent) {
+            (state.snackBar as Event.SuccessfulEvent<String>).consume {
+                coroutineScope.launch {
+                    snackBarHostState.showSnackbar(it)
+                }
             }
         }
+
     }
 
     Scaffold(
@@ -54,7 +60,29 @@ fun DevelopmentScreen(
                 .padding(30.dp)
         ) {
 
-            //Add buttons
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { viewModel.openApp() },
+                enabled = !state.operationRunning
+            ) {
+                Text(text = "Open app")
+            }
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { viewModel.seedDatabase() },
+                enabled = !state.operationRunning
+            ) {
+                Text(text = "Seed database")
+            }
+
+            Button(
+                modifier = Modifier.fillMaxWidth(),
+                onClick = { viewModel.clearDatabase() },
+                enabled = !state.operationRunning
+            ) {
+                Text(text = "Clear database")
+            }
 
         }
 

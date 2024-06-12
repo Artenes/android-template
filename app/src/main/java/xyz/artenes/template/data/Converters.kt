@@ -3,17 +3,29 @@ package xyz.artenes.template.data
 import androidx.room.TypeConverter
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.format.DateTimeFormatter
 import java.util.UUID
 
 class Converters {
 
-    private val dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    @TypeConverter
+    fun fromLocalDateTime(localDateTime: LocalDateTime?): String? {
+        return localDateTime?.toString()
+    }
+
+    @TypeConverter
+    fun stringToLocalDateTime(string: String?): LocalDateTime? {
+        if (string == null) {
+            return null
+        }
+        return LocalDateTime.parse(string)
+    }
 
     @TypeConverter
     fun fromLocalDate(localDate: LocalDate?): String? {
-        return localDate?.format(dateFormat)
+        return localDate?.toString()
     }
 
     @TypeConverter
@@ -21,7 +33,7 @@ class Converters {
         if (string == null) {
             return null
         }
-        return LocalDate.parse(string, dateFormat)
+        return LocalDate.parse(string)
     }
 
     @TypeConverter

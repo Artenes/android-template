@@ -19,8 +19,8 @@ import xyz.artenes.template.app.components.DatePickerInput
 import xyz.artenes.template.app.components.DropDownMenuInput
 import xyz.artenes.template.app.components.MonthPicker
 import xyz.artenes.template.app.components.MultiDropDownMenuInput
-import xyz.artenes.template.core.models.FormattedValue
-import xyz.artenes.template.core.models.SelectableItem
+import xyz.artenes.template.core.models.foundation.FormattedValue
+import xyz.artenes.template.core.models.foundation.SelectableItem
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
