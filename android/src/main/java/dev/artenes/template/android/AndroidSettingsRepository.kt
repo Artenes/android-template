@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
-import xyz.artenes.template.core.interfaces.SettingsRepository
+import dev.artenes.template.core.interfaces.SettingsRepository
 import kotlin.coroutines.CoroutineContext
 
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")

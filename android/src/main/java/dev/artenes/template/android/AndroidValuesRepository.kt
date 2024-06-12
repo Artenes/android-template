@@ -1,7 +1,7 @@
 package dev.artenes.template.android
 
 import android.content.Context
-import xyz.artenes.template.core.interfaces.ValuesRepository
+import dev.artenes.template.core.interfaces.ValuesRepository
 
 class AndroidValuesRepository(private val context: Context) : ValuesRepository {
 

@@ -25,17 +25,17 @@ android {
         }
     }
 
-    namespace = "xyz.artenes.app"
+    namespace = "dev.artenes.template"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "xyz.artenes.app"
+        applicationId = "dev.artenes.template"
         minSdk = 29
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         archivesName = "template_v${versionName}"
-        testInstrumentationRunner = "xyz.artenes.app.HiltTestRunner"
+        testInstrumentationRunner = "dev.artenes.template.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }

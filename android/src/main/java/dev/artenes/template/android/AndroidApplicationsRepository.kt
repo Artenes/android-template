@@ -3,7 +3,7 @@ package dev.artenes.template.android
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import xyz.artenes.template.core.interfaces.ApplicationsRepository
+import dev.artenes.template.core.interfaces.ApplicationsRepository
 
 class AndroidApplicationsRepository(
     private val context: Context,
