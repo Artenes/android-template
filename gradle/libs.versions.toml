@@ -19,8 +19,10 @@ timber = "5.0.1"
 ksp = "1.9.22-1.0.17"
 desugar = "2.0.4"
 datastore = "1.1.0"
+accompanist = "0.34.0"
 
 [libraries]
+
 # using group
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
 androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3"}
@@ -32,6 +34,8 @@ androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 icons-extended = { group = "androidx.compose.material", name = "material-icons-extended"}
 android-tools-desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
+accompanist-permission = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist" }
+
 # using module
 androidx-compose-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "androidxComposeCompiler" } # this one is used
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidxCore" }
