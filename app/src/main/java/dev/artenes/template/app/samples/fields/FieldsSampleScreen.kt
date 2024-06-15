@@ -1,4 +1,4 @@
-package dev.artenes.template.app.samples
+package dev.artenes.template.app.samples.fields
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

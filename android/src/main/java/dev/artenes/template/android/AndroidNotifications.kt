@@ -46,7 +46,9 @@ class AndroidNotifications(
         icon: Int,
         title: String,
         content: String,
-        action: String
+        action: String,
+        id: Int,
+        silent: Boolean
     ) {
 
         val channel = notificationManager.getNotificationChannel(channelId)
@@ -54,6 +56,7 @@ class AndroidNotifications(
             .setSmallIcon(icon)
             .setContentTitle(title)
             .setContentText(content)
+            .setSilent(silent)
             .setPriority(parseImportanceForNotification(channel.importance))
 
         if (action.isNotEmpty()) {
@@ -61,7 +64,10 @@ class AndroidNotifications(
             val deepLinkIntent = Intent(Intent.ACTION_VIEW, action.toUri(), context, mainActivity)
             val deepLinkPendingIntent = TaskStackBuilder.create(context).run {
                 addNextIntentWithParentStack(deepLinkIntent)
-                getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+                getPendingIntent(
+                    0,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
             }
             builder.setContentIntent(deepLinkPendingIntent).setAutoCancel(true)
 
@@ -71,7 +77,8 @@ class AndroidNotifications(
             if (!hasPermission()) {
                 throw MissingPermissionToDisplayNotificationException(Manifest.permission.POST_NOTIFICATIONS)
             }
-            notify(makeNotificationId(), builder.build())
+            val finalId = if (id == -1) makeNotificationId() else id
+            notify(finalId, builder.build())
         }
     }
 
@@ -91,6 +98,7 @@ class AndroidNotifications(
         return when (importance) {
             Notifications.Importance.NORMAL -> NotificationManager.IMPORTANCE_DEFAULT
             Notifications.Importance.HIGH -> NotificationManager.IMPORTANCE_HIGH
+            Notifications.Importance.LOW -> NotificationManager.IMPORTANCE_LOW
         }
     }
 
@@ -98,6 +106,7 @@ class AndroidNotifications(
         return when (importance) {
             NotificationManager.IMPORTANCE_DEFAULT -> NotificationCompat.PRIORITY_DEFAULT
             NotificationManager.IMPORTANCE_HIGH -> NotificationCompat.PRIORITY_HIGH
+            NotificationManager.IMPORTANCE_LOW -> NotificationCompat.PRIORITY_LOW
             else -> throw InvalidChannelImportanceException(importance)
         }
     }

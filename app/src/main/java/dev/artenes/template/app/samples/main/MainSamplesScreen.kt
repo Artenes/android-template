@@ -1,4 +1,4 @@
-package dev.artenes.template.app.samples
+package dev.artenes.template.app.samples.main
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 fun MainSamplesScreen(
     navigateToFieldsSample: () -> Unit,
     navigateToNotificationsSample: () -> Unit,
+    navigateToServicesSample: () -> Unit,
 ) {
 
     Scaffold { edges ->
@@ -45,6 +46,21 @@ fun MainSamplesScreen(
                         .fillMaxWidth()
                         .padding(10.dp),
                     text = "Notifications Sample",
+                    style = MaterialTheme.typography.bodyLarge
+                )
+
+            }
+
+            Button(
+                onClick = navigateToServicesSample,
+                modifier = Modifier.padding(top = 20.dp)
+            ) {
+
+                Text(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(10.dp),
+                    text = "Services Sample",
                     style = MaterialTheme.typography.bodyLarge
                 )
 

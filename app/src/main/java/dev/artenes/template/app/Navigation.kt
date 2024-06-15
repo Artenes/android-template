@@ -5,9 +5,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navDeepLink
-import dev.artenes.template.app.samples.FieldsSampleScreen
-import dev.artenes.template.app.samples.MainSamplesScreen
-import dev.artenes.template.app.samples.NotificationsSampleScreen
+import dev.artenes.template.app.samples.fields.FieldsSampleScreen
+import dev.artenes.template.app.samples.main.MainSamplesScreen
+import dev.artenes.template.app.samples.notifications.NotificationsSampleScreen
+import dev.artenes.template.app.samples.services.ServiceSampleScreen
 
 @Composable
 fun MainNavigation() {
@@ -31,6 +32,9 @@ fun MainNavigation() {
                 },
                 navigateToNotificationsSample = {
                     navController.navigate("notifications")
+                },
+                navigateToServicesSample = {
+                    navController.navigate("services")
                 }
             )
 
@@ -52,6 +56,19 @@ fun MainNavigation() {
         ) {
 
             NotificationsSampleScreen(
+                back = {
+                    navController.popBackStack()
+                }
+            )
+
+        }
+
+        composable(
+            "services",
+            deepLinks = listOf(navDeepLink { uriPattern = "$uri/services" })
+        ) {
+
+            ServiceSampleScreen(
                 back = {
                     navController.popBackStack()
                 }

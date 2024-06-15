@@ -1,4 +1,4 @@
-package dev.artenes.template.app.samples
+package dev.artenes.template.app.samples.notifications
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

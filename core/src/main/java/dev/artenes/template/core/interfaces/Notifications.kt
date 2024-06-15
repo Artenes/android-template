@@ -9,11 +9,14 @@ interface Notifications {
         icon: Int,
         title: String,
         content: String,
-        action: String = ""
+        action: String = "",
+        id: Int = -1,
+        silent: Boolean = false
     )
 
     enum class Importance {
         HIGH,
-        NORMAL
+        NORMAL,
+        LOW
     }
 }

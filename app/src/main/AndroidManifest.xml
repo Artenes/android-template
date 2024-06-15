@@ -41,6 +41,7 @@
                 <data android:scheme="https" android:host="template.artenes.dev"/>
             </intent-filter>
         </activity>
+        <service android:name=".app.samples.services.TimerService"/>
     </application>
 
 </manifest>

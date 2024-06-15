@@ -9,6 +9,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.artenes.template.android.AndroidApplicationsRepository
 import dev.artenes.template.android.AndroidNotifications
+import dev.artenes.template.android.AndroidServiceConnection
 import dev.artenes.template.android.AndroidSettingsRepository
 import dev.artenes.template.android.AndroidValuesRepository
 import dev.artenes.template.android.dataStore
@@ -55,6 +56,11 @@ class AndroidModule {
             context,
             MainActivity::class.java
         )
+    }
+
+    @Provides
+    fun providesServiceConnection(@ApplicationContext context: Context): AndroidServiceConnection {
+        return AndroidServiceConnection(context)
     }
 
 }
