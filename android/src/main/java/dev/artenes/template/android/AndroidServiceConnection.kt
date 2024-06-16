@@ -27,7 +27,7 @@ class AndroidServiceConnection(private val context: Context) {
         }
 
         val intent = Intent(context, clazz)
-        context.startService(intent)
+        context.startForegroundService(intent)
         context.bindService(intent, serviceConnection!!, Context.BIND_AUTO_CREATE)
 
     }
