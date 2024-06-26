@@ -46,20 +46,6 @@ android {
         }
     }
 
-    flavorDimensions.add("app")
-    productFlavors {
-
-        create("production") {
-            dimension = "app"
-        }
-
-        create("development") {
-            dimension = "app"
-        }
-
-    }
-
-
     buildTypes {
         getByName("debug") {
             applicationIdSuffix = ".debug"
@@ -104,8 +90,6 @@ android {
 }
 
 dependencies {
-
-    implementation(project(":android"))
 
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)

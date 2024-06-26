@@ -7,7 +7,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dev.artenes.template.core.interfaces.DataRepository
 import dev.artenes.template.data.AppDatabase
 import dev.artenes.template.data.AppRepository
 import javax.inject.Singleton
@@ -32,7 +31,7 @@ class DataModule {
     fun providesDataRepository(
         appDatabase: AppDatabase,
         dispatcher: CoroutineContext
-    ): DataRepository {
+    ): AppRepository {
         return AppRepository(appDatabase.sampleDao(), dispatcher)
     }
 
